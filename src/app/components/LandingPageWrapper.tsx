@@ -1,22 +1,8 @@
-import { useEffect } from "react";
-import FrameLanding from "@/imports/Frame";
+import { ValurHomepage } from "./ValurHomepage";
 
+// The landing page renders the Knattspyrna Akademian homepage from the design kit
+// (design-kit/landing/valur-homepage.html), ported faithfully in ValurHomepage.
+// Its CTAs call onEnter to advance into the app.
 export function LandingPageWrapper({ onEnter }: { onEnter: () => void }) {
-  useEffect(() => {
-    // Intercept clicks on all anchors and certain elements to trigger onEnter
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest('a[href], button');
-      if (link) {
-        e.preventDefault();
-        e.stopPropagation();
-        onEnter();
-      }
-    };
-
-    document.addEventListener('click', handleClick, true);
-    return () => document.removeEventListener('click', handleClick, true);
-  }, [onEnter]);
-
-  return <FrameLanding />;
+  return <ValurHomepage onEnter={onEnter} />;
 }

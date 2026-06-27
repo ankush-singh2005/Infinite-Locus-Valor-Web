@@ -31,6 +31,12 @@ export default defineConfig({
     },
   },
 
+  // Allow the dev server to be reached through ngrok / other tunnels.
+  // Vite blocks unknown Host headers by default; these wildcards cover ngrok domains.
+  server: {
+    allowedHosts: ['.ngrok-free.app', '.ngrok.app', '.ngrok.io', '.ngrok-free.dev'],
+  },
+
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
