@@ -3088,6 +3088,7 @@ function CreatePackagePage({ onBack }: { onBack: () => void }) {
                   </div>
                 </div>
               </div>
+            </div>
           </>}
 
           {/* ── STEP 2: Session Type ── */}
